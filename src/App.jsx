@@ -5,10 +5,8 @@ export default function App() {
   const [respuesta, setRespuesta] = useState("");
 
   const consultar = () => {
-    if (!pregunta.trim()) {
-      setRespuesta("Introduce una pregunta.");
-      return;
-    }
+  alert("Botón pulsado");
+};
 
     setRespuesta(
       "Esta es una respuesta de prueba. Más adelante consultará la documentación oficial de Star Wars: Legion."
