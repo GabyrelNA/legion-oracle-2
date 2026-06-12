@@ -5,13 +5,24 @@ export default function App() {
   const [respuesta, setRespuesta] = useState("");
 
   const consultar = () => {
-    if (!pregunta.trim()) {
-      setRespuesta("Por favor, escribe una pregunta.");
+    const texto = pregunta.toLowerCase();
+
+    if (texto.includes("retirada")) {
+      setRespuesta(
+        "Respuesta de prueba: una unidad que se retira realiza una acción de movimiento de retirada."
+      );
+      return;
+    }
+
+    if (texto.includes("cobertura")) {
+      setRespuesta(
+        "Respuesta de prueba: la cobertura reduce impactos antes de la tirada de salvación."
+      );
       return;
     }
 
     setRespuesta(
-      `Has preguntado: "${pregunta}". Legion Oracle 2.0 responderá aquí en futuras versiones.`
+      "No encuentro todavía una respuesta para esa pregunta."
     );
   };
 
