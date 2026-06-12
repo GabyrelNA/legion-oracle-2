@@ -13,7 +13,11 @@ export default function App() {
     );
 
     if (reglaEncontrada) {
-      setRespuesta(reglaEncontrada.respuesta);
+      setRespuesta(
+        `Regla encontrada: ${reglaEncontrada.titulo}
+
+${reglaEncontrada.respuesta}`
+      );
       return;
     }
 
@@ -55,7 +59,8 @@ export default function App() {
           marginTop: "20px",
           border: "1px solid #ccc",
           padding: "15px",
-          borderRadius: "8px"
+          borderRadius: "8px",
+          whiteSpace: "pre-line"
         }}
       >
         {respuesta || "Aquí aparecerá la respuesta."}
