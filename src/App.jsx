@@ -5,12 +5,7 @@ export default function App() {
   const [respuesta, setRespuesta] = useState("");
 
   const consultar = () => {
-  alert("Botón pulsado");
-};
-
-    setRespuesta(
-      "Esta es una respuesta de prueba. Más adelante consultará la documentación oficial de Star Wars: Legion."
-    );
+    alert("Botón pulsado");
   };
 
   return (
@@ -52,7 +47,5 @@ export default function App() {
         {respuesta || "Aquí aparecerá la respuesta."}
       </div>
     </div>
-  );
-}
   );
 }
