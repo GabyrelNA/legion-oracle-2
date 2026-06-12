@@ -15,7 +15,7 @@ export default function App() {
 
   return (
     <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
-      <h1>Legion Oracle 2.0</h1>
+      <h1>LEGION ORACLE PRUEBA 999</h1>
 
       <p>Asistente de reglas para Star Wars: Legion</p>
 
