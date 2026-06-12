@@ -1,4 +1,20 @@
+import { useState } from "react";
+
 export default function App() {
+  const [pregunta, setPregunta] = useState("");
+  const [respuesta, setRespuesta] = useState("");
+
+  const consultar = () => {
+    if (!pregunta.trim()) {
+      setRespuesta("Introduce una pregunta.");
+      return;
+    }
+
+    setRespuesta(
+      "Esta es una respuesta de prueba. Más adelante consultará la documentación oficial de Star Wars: Legion."
+    );
+  };
+
   return (
     <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
       <h1>Legion Oracle 2.0</h1>
@@ -6,6 +22,8 @@ export default function App() {
       <p>Asistente de reglas para Star Wars: Legion</p>
 
       <textarea
+        value={pregunta}
+        onChange={(e) => setPregunta(e.target.value)}
         placeholder="Escribe tu pregunta..."
         rows="4"
         style={{
@@ -16,6 +34,7 @@ export default function App() {
       />
 
       <button
+        onClick={consultar}
         style={{
           marginTop: "10px",
           padding: "10px 20px"
@@ -32,8 +51,10 @@ export default function App() {
           borderRadius: "8px"
         }}
       >
-        Aquí aparecerá la respuesta.
+        {respuesta || "Aquí aparecerá la respuesta."}
       </div>
     </div>
+  );
+}
   );
 }
