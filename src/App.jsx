@@ -5,12 +5,19 @@ export default function App() {
   const [respuesta, setRespuesta] = useState("");
 
   const consultar = () => {
-    alert("Botón pulsado");
+    if (!pregunta.trim()) {
+      setRespuesta("Por favor, escribe una pregunta.");
+      return;
+    }
+
+    setRespuesta(
+      `Has preguntado: "${pregunta}". Legion Oracle 2.0 responderá aquí en futuras versiones.`
+    );
   };
 
   return (
     <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
-      <h1>LEGION ORACLE PRUEBA 999</h1>
+      <h1>Legion Oracle 2.0</h1>
 
       <p>Asistente de reglas para Star Wars: Legion</p>
 
