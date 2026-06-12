@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { reglas } from "./reglas";
 
 export default function App() {
   const [pregunta, setPregunta] = useState("");
@@ -7,17 +8,12 @@ export default function App() {
   const consultar = () => {
     const texto = pregunta.toLowerCase();
 
-    if (texto.includes("retirada")) {
-      setRespuesta(
-        "Respuesta de prueba: una unidad que se retira realiza una acción de movimiento de retirada."
-      );
-      return;
-    }
+    const reglaEncontrada = reglas.find((regla) =>
+      texto.includes(regla.palabra)
+    );
 
-    if (texto.includes("cobertura")) {
-      setRespuesta(
-        "Respuesta de prueba: la cobertura reduce impactos antes de la tirada de salvación."
-      );
+    if (reglaEncontrada) {
+      setRespuesta(reglaEncontrada.respuesta);
       return;
     }
 
