@@ -1,9 +1,18 @@
-import { useState } from "react";
-import { reglas } from "./reglas";
+import { useEffect, useState } from "react";
 
 export default function App() {
   const [pregunta, setPregunta] = useState("");
   const [respuesta, setRespuesta] = useState("");
+  const [reglas, setReglas] = useState([]);
+
+  useEffect(() => {
+    fetch("/reglas.json")
+      .then((response) => response.json())
+      .then((data) => setReglas(data))
+      .catch((error) => {
+        console.error("Error cargando reglas:", error);
+      });
+  }, []);
 
   const consultar = () => {
     const texto = pregunta.toLowerCase();
