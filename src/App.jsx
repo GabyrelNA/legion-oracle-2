@@ -16,11 +16,7 @@ export default function App() {
   }, []);
 
   const consultar = () => {
-    const coincidencias = buscarReglas(
-      reglas,
-      pregunta
-    );
-
+    const coincidencias = buscarReglas(reglas, pregunta);
     setResultados(coincidencias);
   };
 
@@ -127,11 +123,13 @@ export default function App() {
               border: "1px solid #999"
             }}
           >
-            <h3>
-              {obtenerEtiqueta(regla.tipo)}
-            </h3>
+            <h3>{obtenerEtiqueta(regla.tipo)}</h3>
 
             <h2>{regla.titulo}</h2>
+
+            <p>
+              <strong>Categoría:</strong> {regla.categoria}
+            </p>
 
             <p>{regla.respuesta}</p>
 
