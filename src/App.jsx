@@ -17,20 +17,25 @@ export default function App() {
   const consultar = () => {
     const texto = pregunta.toLowerCase();
 
-    const reglaEncontrada = reglas.find((regla) =>
+    const coincidencias = reglas.filter((regla) =>
       texto.includes(regla.palabra)
     );
 
-    if (reglaEncontrada) {
-      setRespuesta(
-`Regla encontrada: ${reglaEncontrada.titulo}
+    if (coincidencias.length > 0) {
+      const resultado = coincidencias
+        .map(
+          (regla) =>
+`Regla encontrada: ${regla.titulo}
 
-${reglaEncontrada.respuesta}
+${regla.respuesta}
 
-Fuente: ${reglaEncontrada.fuente}
-Página: ${reglaEncontrada.pagina}
-Tipo: ${reglaEncontrada.tipo}`
-      );
+Fuente: ${regla.fuente}
+Página: ${regla.pagina}
+Tipo: ${regla.tipo}`
+        )
+        .join("\n\n----------------\n\n");
+
+      setRespuesta(resultado);
       return;
     }
 
