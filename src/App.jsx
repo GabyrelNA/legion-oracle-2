@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { buscarReglas } from "./buscador";
 
 export default function App() {
   const [pregunta, setPregunta] = useState("");
@@ -15,16 +16,9 @@ export default function App() {
   }, []);
 
   const consultar = () => {
-    const texto = pregunta.toLowerCase();
-
-    const coincidencias = reglas.filter((regla) =>
-      regla.palabras.some((palabra) =>
-        texto.includes(palabra.toLowerCase())
-      )
-    );
-
-    coincidencias.sort(
-      (a, b) => b.autoridad - a.autoridad
+    const coincidencias = buscarReglas(
+      reglas,
+      pregunta
     );
 
     setResultados(coincidencias);
