@@ -49,6 +49,11 @@ Fecha: ${regla.fecha}`
     );
   };
 
+  const limpiar = () => {
+    setPregunta("");
+    setRespuesta("");
+  };
+
   return (
     <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
       <h1>Legion Oracle 2.0</h1>
@@ -71,15 +76,26 @@ Fecha: ${regla.fecha}`
         }}
       />
 
-      <button
-        onClick={consultar}
-        style={{
-          marginTop: "10px",
-          padding: "10px 20px"
-        }}
-      >
-        Consultar
-      </button>
+      <div style={{ marginTop: "10px" }}>
+        <button
+          onClick={consultar}
+          style={{
+            padding: "10px 20px",
+            marginRight: "10px"
+          }}
+        >
+          Consultar
+        </button>
+
+        <button
+          onClick={limpiar}
+          style={{
+            padding: "10px 20px"
+          }}
+        >
+          Limpiar
+        </button>
+      </div>
 
       <div
         style={{
