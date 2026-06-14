@@ -131,6 +131,10 @@ export default function App() {
               <strong>Categoría:</strong> {regla.categoria}
             </p>
 
+            <p>
+              <strong>Documento:</strong> {regla.documento}
+            </p>
+
             <p>{regla.respuesta}</p>
 
             <hr />
