@@ -33,7 +33,10 @@ ${regla.respuesta}
 
 Fuente: ${regla.fuente}
 Página: ${regla.pagina}
-Tipo: ${regla.tipo}`
+Tipo: ${regla.tipo}
+Autoridad: ${regla.autoridad}
+Versión: ${regla.version}
+Fecha: ${regla.fecha}`
         )
         .join("\n\n----------------\n\n");
 
