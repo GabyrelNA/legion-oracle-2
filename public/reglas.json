@@ -2,11 +2,17 @@
   {
     "palabra": "cobertura",
     "titulo": "Cobertura",
-    "respuesta": "Respuesta de prueba: la cobertura reduce impactos antes de la tirada de salvación."
+    "respuesta": "La cobertura reduce impactos antes de la tirada de salvación.",
+    "fuente": "Rules Reference",
+    "pagina": 43,
+    "tipo": "oficial"
   },
   {
     "palabra": "retirada",
     "titulo": "Retirada",
-    "respuesta": "Respuesta de prueba: una unidad que se retira realiza una acción de movimiento de retirada."
+    "respuesta": "Una unidad que se retira realiza una acción de movimiento de retirada.",
+    "fuente": "Rules Reference",
+    "pagina": 61,
+    "tipo": "oficial"
   }
 ]
