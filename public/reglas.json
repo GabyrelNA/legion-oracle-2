@@ -1,6 +1,10 @@
 [
   {
-    "palabra": "cobertura",
+    "palabras": [
+      "cobertura",
+      "cover",
+      "cubierto"
+    ],
     "titulo": "Cobertura",
     "respuesta": "La cobertura reduce impactos antes de la tirada de salvación.",
     "fuente": "Rules Reference",
@@ -8,7 +12,12 @@
     "tipo": "oficial"
   },
   {
-    "palabra": "retirada",
+    "palabras": [
+      "retirada",
+      "retirarse",
+      "huir",
+      "retroceder"
+    ],
     "titulo": "Retirada",
     "respuesta": "Una unidad que se retira realiza una acción de movimiento de retirada.",
     "fuente": "Rules Reference",
