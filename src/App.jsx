@@ -18,7 +18,9 @@ export default function App() {
     const texto = pregunta.toLowerCase();
 
     const coincidencias = reglas.filter((regla) =>
-      texto.includes(regla.palabra)
+      regla.palabras.some((palabra) =>
+        texto.includes(palabra.toLowerCase())
+      )
     );
 
     if (coincidencias.length > 0) {
