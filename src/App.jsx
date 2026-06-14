@@ -23,6 +23,10 @@ export default function App() {
       )
     );
 
+    coincidencias.sort(
+      (a, b) => b.autoridad - a.autoridad
+    );
+
     setResultados(coincidencias);
   };
 
@@ -44,6 +48,22 @@ export default function App() {
 
       default:
         return "#f8f9fa";
+    }
+  };
+
+  const obtenerEtiqueta = (tipo) => {
+    switch (tipo) {
+      case "oficial":
+        return "OFICIAL";
+
+      case "representante_oficial":
+        return "REPRESENTANTE OFICIAL";
+
+      case "comunidad":
+        return "COMUNIDAD";
+
+      default:
+        return tipo.toUpperCase();
     }
   };
 
@@ -114,7 +134,7 @@ export default function App() {
             }}
           >
             <h3>
-              [{regla.tipo.toUpperCase()}]
+              {obtenerEtiqueta(regla.tipo)}
             </h3>
 
             <h2>{regla.titulo}</h2>
