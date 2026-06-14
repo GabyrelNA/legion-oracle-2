@@ -6,6 +6,7 @@
       "cubierto"
     ],
     "titulo": "Cobertura",
+    "categoria": "reglas",
     "respuesta": "La cobertura reduce impactos antes de la tirada de salvación.",
     "fuente": "Rules Reference",
     "pagina": 43,
@@ -21,6 +22,7 @@
       "cubierto"
     ],
     "titulo": "Cobertura - Aclaración del representante oficial",
+    "categoria": "consulta_oficial",
     "respuesta": "Ejemplo de aclaración emitida por el representante oficial del juego. Más adelante esta información procederá de consultas reales documentadas.",
     "fuente": "Representante Oficial SWL",
     "pagina": null,
@@ -36,6 +38,7 @@
       "cubierto"
     ],
     "titulo": "Cobertura - Interpretación de comunidad",
+    "categoria": "comunidad",
     "respuesta": "Ejemplo de interpretación comunitaria. Más adelante esta información procederá del chat exportado de WhatsApp.",
     "fuente": "Comunidad SWL",
     "pagina": null,
@@ -52,6 +55,7 @@
       "retroceder"
     ],
     "titulo": "Retirada",
+    "categoria": "reglas",
     "respuesta": "Una unidad que se retira realiza una acción de movimiento de retirada.",
     "fuente": "Rules Reference",
     "pagina": 61,
