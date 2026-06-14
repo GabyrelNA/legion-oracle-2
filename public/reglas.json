@@ -9,7 +9,10 @@
     "respuesta": "La cobertura reduce impactos antes de la tirada de salvación.",
     "fuente": "Rules Reference",
     "pagina": 43,
-    "tipo": "oficial"
+    "tipo": "oficial",
+    "autoridad": 100,
+    "version": "2.7",
+    "fecha": "2026-06-14"
   },
   {
     "palabras": [
@@ -22,6 +25,9 @@
     "respuesta": "Una unidad que se retira realiza una acción de movimiento de retirada.",
     "fuente": "Rules Reference",
     "pagina": 61,
-    "tipo": "oficial"
+    "tipo": "oficial",
+    "autoridad": 100,
+    "version": "2.7",
+    "fecha": "2026-06-14"
   }
 ]
