@@ -20,6 +20,21 @@
       "cover",
       "cubierto"
     ],
+    "titulo": "Cobertura - Aclaración del representante oficial",
+    "respuesta": "Ejemplo de aclaración emitida por el representante oficial del juego. Más adelante esta información procederá de consultas reales documentadas.",
+    "fuente": "Representante Oficial SWL",
+    "pagina": null,
+    "tipo": "representante_oficial",
+    "autoridad": 90,
+    "version": "N/A",
+    "fecha": "2026-06-14"
+  },
+  {
+    "palabras": [
+      "cobertura",
+      "cover",
+      "cubierto"
+    ],
     "titulo": "Cobertura - Interpretación de comunidad",
     "respuesta": "Ejemplo de interpretación comunitaria. Más adelante esta información procederá del chat exportado de WhatsApp.",
     "fuente": "Comunidad SWL",
