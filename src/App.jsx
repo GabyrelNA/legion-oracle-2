@@ -27,18 +27,19 @@ export default function App() {
       const resultado = coincidencias
         .map(
           (regla) =>
-`Regla encontrada: ${regla.titulo}
+`[${regla.tipo.toUpperCase()}]
+
+${regla.titulo}
 
 ${regla.respuesta}
 
 Fuente: ${regla.fuente}
 Página: ${regla.pagina}
-Tipo: ${regla.tipo}
 Autoridad: ${regla.autoridad}
 Versión: ${regla.version}
 Fecha: ${regla.fecha}`
         )
-        .join("\n\n----------------\n\n");
+        .join("\n\n====================\n\n");
 
       setRespuesta(resultado);
       return;
