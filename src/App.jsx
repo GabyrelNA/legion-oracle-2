@@ -23,9 +23,13 @@ export default function App() {
 
     if (reglaEncontrada) {
       setRespuesta(
-        `Regla encontrada: ${reglaEncontrada.titulo}
+`Regla encontrada: ${reglaEncontrada.titulo}
 
-${reglaEncontrada.respuesta}`
+${reglaEncontrada.respuesta}
+
+Fuente: ${reglaEncontrada.fuente}
+Página: ${reglaEncontrada.pagina}
+Tipo: ${reglaEncontrada.tipo}`
       );
       return;
     }
@@ -40,6 +44,10 @@ ${reglaEncontrada.respuesta}`
       <h1>Legion Oracle 2.0</h1>
 
       <p>Asistente de reglas para Star Wars: Legion</p>
+
+      <p>
+        Reglas cargadas: <strong>{reglas.length}</strong>
+      </p>
 
       <textarea
         value={pregunta}
