@@ -14,7 +14,9 @@ export function buscarReglas(reglas, pregunta) {
       ${regla.titulo || ""}
       ${regla.respuesta || ""}
       ${regla.documento || ""}
+      ${regla.seccion || ""}
       ${(regla.palabras || []).join(" ")}
+      ${(regla.tags || []).join(" ")}
     `.toLowerCase();
 
     palabrasBusqueda.forEach((palabra) => {
