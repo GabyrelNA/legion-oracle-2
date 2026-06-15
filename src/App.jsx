@@ -194,10 +194,30 @@ export default function App() {
             border: "1px solid #ccc"
           }}
         >
-          <strong>
-            Resultados encontrados:
-          </strong>{" "}
-          {resultadosFiltrados.length}
+          <p>
+            <strong>
+              Resultados encontrados:
+            </strong>{" "}
+            {resultadosFiltrados.length}
+          </p>
+
+          <p>
+            <strong>Mostrando:</strong>
+          </p>
+
+          {mostrarOficial && (
+            <p>✓ Oficiales</p>
+          )}
+
+          {mostrarRepresentante && (
+            <p>
+              ✓ Representante oficial
+            </p>
+          )}
+
+          {mostrarComunidad && (
+            <p>✓ Comunidad</p>
+          )}
         </div>
       )}
 
@@ -225,14 +245,12 @@ export default function App() {
           </p>
 
           <p>
-            Documento:
-            {" "}
+            Documento:{" "}
             {mejorResultado.documento}
           </p>
 
           <p>
-            Página:
-            {" "}
+            Página:{" "}
             {String(
               mejorResultado.pagina
             )}
