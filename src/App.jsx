@@ -57,6 +57,11 @@ export default function App() {
     }
   };
 
+  const mejorResultado =
+    resultados.length > 0
+      ? resultados[0]
+      : null;
+
   return (
     <div style={{ maxWidth: "900px", margin: "0 auto", padding: "20px" }}>
       <h1>Legion Oracle 2.0</h1>
@@ -99,6 +104,38 @@ export default function App() {
           Limpiar
         </button>
       </div>
+
+      {mejorResultado && (
+        <div
+          style={{
+            marginTop: "20px",
+            padding: "15px",
+            borderRadius: "10px",
+            backgroundColor: "#e8f4ff",
+            border: "2px solid #0077cc"
+          }}
+        >
+          <h2>MEJOR RESPUESTA DISPONIBLE</h2>
+
+          <p>
+            <strong>
+              {obtenerEtiqueta(
+                mejorResultado.tipo
+              )}
+            </strong>
+          </p>
+
+          <p>
+            Documento:{" "}
+            {mejorResultado.documento}
+          </p>
+
+          <p>
+            Página:{" "}
+            {String(mejorResultado.pagina)}
+          </p>
+        </div>
+      )}
 
       {resultados.length === 0 ? (
         <div
