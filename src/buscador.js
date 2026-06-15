@@ -1,40 +1,42 @@
 export function buscarReglas(reglas, pregunta) {
-  const texto = pregunta.toLowerCase();
+  const palabrasBusqueda = pregunta
+    .toLowerCase()
+    .split(/\s+/)
+    .filter((palabra) => palabra.length > 2);
 
-  const coincidencias = reglas.filter((regla) => {
-    const coincidePalabras =
-      regla.palabras?.some((palabra) =>
-        texto.includes(
-          palabra.toLowerCase()
-        )
-      );
+  const resultados = [];
 
-    const coincideTitulo =
-      regla.titulo
-        ?.toLowerCase()
-        .includes(texto);
+  reglas.forEach((regla) => {
+    let puntuacion = 0;
 
-    const coincideRespuesta =
-      regla.respuesta
-        ?.toLowerCase()
-        .includes(texto);
+    const textoCompleto = `
+      ${regla.titulo || ""}
+      ${regla.respuesta || ""}
+      ${regla.documento || ""}
+      ${(regla.palabras || []).join(" ")}
+    `.toLowerCase();
 
-    const coincideDocumento =
-      regla.documento
-        ?.toLowerCase()
-        .includes(texto);
+    palabrasBusqueda.forEach((palabra) => {
+      if (textoCompleto.includes(palabra)) {
+        puntuacion++;
+      }
+    });
 
-    return (
-      coincidePalabras ||
-      coincideTitulo ||
-      coincideRespuesta ||
-      coincideDocumento
-    );
+    if (puntuacion > 0) {
+      resultados.push({
+        ...regla,
+        puntuacion
+      });
+    }
   });
 
-  coincidencias.sort(
-    (a, b) => b.autoridad - a.autoridad
-  );
+  resultados.sort((a, b) => {
+    if (b.autoridad !== a.autoridad) {
+      return b.autoridad - a.autoridad;
+    }
 
-  return coincidencias;
+    return b.puntuacion - a.puntuacion;
+  });
+
+  return resultados;
 }
