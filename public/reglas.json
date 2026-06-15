@@ -1,11 +1,18 @@
 [
   {
+    "id": "RR-043",
     "palabras": [
       "cobertura",
       "cover",
       "cubierto"
     ],
+    "tags": [
+      "cobertura",
+      "impactos",
+      "salvacion"
+    ],
     "titulo": "Cobertura",
+    "seccion": "Cobertura",
     "categoria": "reglas",
     "documento": "Rules Reference v2.7",
     "respuesta": "La cobertura reduce impactos antes de la tirada de salvación.",
@@ -17,12 +24,17 @@
     "fecha": "2026-06-14"
   },
   {
+    "id": "REP-001",
     "palabras": [
       "cobertura",
       "cover",
       "cubierto"
     ],
+    "tags": [
+      "cobertura"
+    ],
     "titulo": "Cobertura - Aclaración del representante oficial",
+    "seccion": "Cobertura",
     "categoria": "consulta_oficial",
     "documento": "WhatsApp Representante Oficial",
     "respuesta": "Ejemplo de aclaración emitida por el representante oficial del juego. Más adelante esta información procederá de consultas reales documentadas.",
@@ -34,12 +46,17 @@
     "fecha": "2026-06-14"
   },
   {
+    "id": "COM-001",
     "palabras": [
       "cobertura",
       "cover",
       "cubierto"
     ],
+    "tags": [
+      "cobertura"
+    ],
     "titulo": "Cobertura - Interpretación de comunidad",
+    "seccion": "Cobertura",
     "categoria": "comunidad",
     "documento": "WhatsApp Comunidad",
     "respuesta": "Ejemplo de interpretación comunitaria. Más adelante esta información procederá del chat exportado de WhatsApp.",
@@ -51,13 +68,20 @@
     "fecha": "2026-06-14"
   },
   {
+    "id": "RR-061",
     "palabras": [
       "retirada",
       "retirarse",
       "huir",
       "retroceder"
     ],
+    "tags": [
+      "retirada",
+      "moral",
+      "huida"
+    ],
     "titulo": "Retirada",
+    "seccion": "Moral",
     "categoria": "reglas",
     "documento": "Rules Reference v2.7",
     "respuesta": "Una unidad que se retira realiza una acción de movimiento de retirada.",
