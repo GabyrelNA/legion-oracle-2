@@ -82,6 +82,34 @@ export default function App() {
       ? resultados[0]
       : null;
 
+  const resultadosFiltrados = resultados.filter(
+    (regla) => {
+      if (
+        regla.tipo === "oficial" &&
+        !mostrarOficial
+      ) {
+        return false;
+      }
+
+      if (
+        regla.tipo ===
+          "representante_oficial" &&
+        !mostrarRepresentante
+      ) {
+        return false;
+      }
+
+      if (
+        regla.tipo === "comunidad" &&
+        !mostrarComunidad
+      ) {
+        return false;
+      }
+
+      return true;
+    }
+  );
+
   return (
     <div
       style={{
@@ -207,16 +235,20 @@ export default function App() {
           Aquí aparecerán las respuestas.
         </div>
       ) : (
-        resultados.map((regla, index) => (
-          <Resultado
-            key={index}
-            regla={regla}
-            obtenerColor={obtenerColor}
-            obtenerEtiqueta={
-              obtenerEtiqueta
-            }
-          />
-        ))
+        resultadosFiltrados.map(
+          (regla, index) => (
+            <Resultado
+              key={index}
+              regla={regla}
+              obtenerColor={
+                obtenerColor
+              }
+              obtenerEtiqueta={
+                obtenerEtiqueta
+              }
+            />
+          )
+        )
       )}
     </div>
   );
