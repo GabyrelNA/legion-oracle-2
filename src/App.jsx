@@ -184,6 +184,23 @@ export default function App() {
         }
       />
 
+      {resultados.length > 0 && (
+        <div
+          style={{
+            marginTop: "20px",
+            padding: "10px",
+            borderRadius: "8px",
+            backgroundColor: "#f5f5f5",
+            border: "1px solid #ccc"
+          }}
+        >
+          <strong>
+            Resultados encontrados:
+          </strong>{" "}
+          {resultadosFiltrados.length}
+        </div>
+      )}
+
       {mejorResultado && (
         <div
           style={{
