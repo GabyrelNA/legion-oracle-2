@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { buscarReglas } from "./buscador";
 import Resultado from "./Resultado";
 import Filtros from "./Filtros";
+import FiltrosCategoria from "./FiltrosCategoria";
 
 export default function App() {
   const [pregunta, setPregunta] = useState("");
@@ -18,6 +19,19 @@ export default function App() {
 
   const [mostrarComunidad, setMostrarComunidad] =
     useState(true);
+
+  const [mostrarReglas, setMostrarReglas] =
+    useState(true);
+
+  const [
+    mostrarConsultas,
+    setMostrarConsultas
+  ] = useState(true);
+
+  const [
+    mostrarComunidadCategoria,
+    setMostrarComunidadCategoria
+  ] = useState(true);
 
   useEffect(() => {
     fetch("/reglas.json")
@@ -106,6 +120,28 @@ export default function App() {
         return false;
       }
 
+      if (
+        regla.categoria === "reglas" &&
+        !mostrarReglas
+      ) {
+        return false;
+      }
+
+      if (
+        regla.categoria ===
+          "consulta_oficial" &&
+        !mostrarConsultas
+      ) {
+        return false;
+      }
+
+      if (
+        regla.categoria === "comunidad" &&
+        !mostrarComunidadCategoria
+      ) {
+        return false;
+      }
+
       return true;
     }
   );
@@ -181,6 +217,25 @@ export default function App() {
         }
         setMostrarComunidad={
           setMostrarComunidad
+        }
+      />
+
+      <FiltrosCategoria
+        mostrarReglas={mostrarReglas}
+        setMostrarReglas={
+          setMostrarReglas
+        }
+        mostrarConsultas={
+          mostrarConsultas
+        }
+        setMostrarConsultas={
+          setMostrarConsultas
+        }
+        mostrarComunidadCategoria={
+          mostrarComunidadCategoria
+        }
+        setMostrarComunidadCategoria={
+          setMostrarComunidadCategoria
         }
       />
 
