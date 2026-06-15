@@ -1,6 +1,7 @@
 export function buscarReglas(reglas, pregunta) {
   const palabrasBusqueda = pregunta
     .toLowerCase()
+    .replace(/[¿?¡!.,;:()]/g, " ")
     .split(/\s+/)
     .filter((palabra) => palabra.length > 2);
 
