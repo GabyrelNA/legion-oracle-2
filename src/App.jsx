@@ -3,6 +3,7 @@ import { buscarReglas } from "./buscador";
 import Resultado from "./Resultado";
 import Filtros from "./Filtros";
 import FiltrosCategoria from "./FiltrosCategoria";
+import FiltrosDocumento from "./FiltrosDocumento";
 
 export default function App() {
   const [pregunta, setPregunta] = useState("");
@@ -31,6 +32,21 @@ export default function App() {
   const [
     mostrarComunidadCategoria,
     setMostrarComunidadCategoria
+  ] = useState(true);
+
+  const [
+    mostrarRulesReference,
+    setMostrarRulesReference
+  ] = useState(true);
+
+  const [
+    mostrarRepresentanteDocumento,
+    setMostrarRepresentanteDocumento
+  ] = useState(true);
+
+  const [
+    mostrarComunidadDocumento,
+    setMostrarComunidadDocumento
   ] = useState(true);
 
   useEffect(() => {
@@ -142,6 +158,30 @@ export default function App() {
         return false;
       }
 
+      if (
+        regla.documento ===
+          "Rules Reference v2.7" &&
+        !mostrarRulesReference
+      ) {
+        return false;
+      }
+
+      if (
+        regla.documento ===
+          "WhatsApp Representante Oficial" &&
+        !mostrarRepresentanteDocumento
+      ) {
+        return false;
+      }
+
+      if (
+        regla.documento ===
+          "WhatsApp Comunidad" &&
+        !mostrarComunidadDocumento
+      ) {
+        return false;
+      }
+
       return true;
     }
   );
@@ -236,6 +276,27 @@ export default function App() {
         }
         setMostrarComunidadCategoria={
           setMostrarComunidadCategoria
+        }
+      />
+
+      <FiltrosDocumento
+        mostrarRulesReference={
+          mostrarRulesReference
+        }
+        setMostrarRulesReference={
+          setMostrarRulesReference
+        }
+        mostrarRepresentanteDocumento={
+          mostrarRepresentanteDocumento
+        }
+        setMostrarRepresentanteDocumento={
+          setMostrarRepresentanteDocumento
+        }
+        mostrarComunidadDocumento={
+          mostrarComunidadDocumento
+        }
+        setMostrarComunidadDocumento={
+          setMostrarComunidadDocumento
         }
       />
 
