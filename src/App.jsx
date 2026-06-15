@@ -1,23 +1,42 @@
 import { useEffect, useState } from "react";
 import { buscarReglas } from "./buscador";
 import Resultado from "./Resultado";
+import Filtros from "./Filtros";
 
 export default function App() {
   const [pregunta, setPregunta] = useState("");
   const [resultados, setResultados] = useState([]);
   const [reglas, setReglas] = useState([]);
 
+  const [mostrarOficial, setMostrarOficial] =
+    useState(true);
+
+  const [
+    mostrarRepresentante,
+    setMostrarRepresentante
+  ] = useState(true);
+
+  const [mostrarComunidad, setMostrarComunidad] =
+    useState(true);
+
   useEffect(() => {
     fetch("/reglas.json")
       .then((response) => response.json())
       .then((data) => setReglas(data))
       .catch((error) => {
-        console.error("Error cargando reglas:", error);
+        console.error(
+          "Error cargando reglas:",
+          error
+        );
       });
   }, []);
 
   const consultar = () => {
-    const coincidencias = buscarReglas(reglas, pregunta);
+    const coincidencias = buscarReglas(
+      reglas,
+      pregunta
+    );
+
     setResultados(coincidencias);
   };
 
@@ -64,18 +83,30 @@ export default function App() {
       : null;
 
   return (
-    <div style={{ maxWidth: "900px", margin: "0 auto", padding: "20px" }}>
+    <div
+      style={{
+        maxWidth: "900px",
+        margin: "0 auto",
+        padding: "20px"
+      }}
+    >
       <h1>Legion Oracle 2.0</h1>
 
-      <p>Asistente de reglas para Star Wars: Legion</p>
+      <p>
+        Asistente de reglas para Star Wars:
+        Legion
+      </p>
 
       <p>
-        Reglas cargadas: <strong>{reglas.length}</strong>
+        Reglas cargadas:
+        <strong> {reglas.length}</strong>
       </p>
 
       <textarea
         value={pregunta}
-        onChange={(e) => setPregunta(e.target.value)}
+        onChange={(e) =>
+          setPregunta(e.target.value)
+        }
         placeholder="Escribe tu pregunta..."
         rows="4"
         style={{
@@ -106,6 +137,25 @@ export default function App() {
         </button>
       </div>
 
+      <Filtros
+        mostrarOficial={mostrarOficial}
+        setMostrarOficial={
+          setMostrarOficial
+        }
+        mostrarRepresentante={
+          mostrarRepresentante
+        }
+        setMostrarRepresentante={
+          setMostrarRepresentante
+        }
+        mostrarComunidad={
+          mostrarComunidad
+        }
+        setMostrarComunidad={
+          setMostrarComunidad
+        }
+      />
+
       {mejorResultado && (
         <div
           style={{
@@ -113,10 +163,13 @@ export default function App() {
             padding: "15px",
             borderRadius: "10px",
             backgroundColor: "#e8f4ff",
-            border: "2px solid #0077cc"
+            border:
+              "2px solid #0077cc"
           }}
         >
-          <h2>MEJOR RESPUESTA DISPONIBLE</h2>
+          <h2>
+            MEJOR RESPUESTA DISPONIBLE
+          </h2>
 
           <p>
             <strong>
@@ -127,13 +180,17 @@ export default function App() {
           </p>
 
           <p>
-            Documento:{" "}
+            Documento:
+            {" "}
             {mejorResultado.documento}
           </p>
 
           <p>
-            Página:{" "}
-            {String(mejorResultado.pagina)}
+            Página:
+            {" "}
+            {String(
+              mejorResultado.pagina
+            )}
           </p>
         </div>
       )}
@@ -155,7 +212,9 @@ export default function App() {
             key={index}
             regla={regla}
             obtenerColor={obtenerColor}
-            obtenerEtiqueta={obtenerEtiqueta}
+            obtenerEtiqueta={
+              obtenerEtiqueta
+            }
           />
         ))
       )}
