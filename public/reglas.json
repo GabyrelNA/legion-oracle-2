@@ -1,6 +1,7 @@
 [
   {
     "id": "RR-043",
+    "estado": "vigente",
     "palabras": [
       "cobertura",
       "cover",
@@ -25,6 +26,7 @@
   },
   {
     "id": "REP-001",
+    "estado": "vigente",
     "palabras": [
       "cobertura",
       "cover",
@@ -47,6 +49,7 @@
   },
   {
     "id": "COM-001",
+    "estado": "vigente",
     "palabras": [
       "cobertura",
       "cover",
@@ -69,6 +72,7 @@
   },
   {
     "id": "RR-061",
+    "estado": "vigente",
     "palabras": [
       "retirada",
       "retirarse",
