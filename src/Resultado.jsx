@@ -20,8 +20,23 @@ export default function Resultado({
       <h2>{regla.titulo}</h2>
 
       <p>
+        <strong>ID:</strong>{" "}
+        {regla.id}
+      </p>
+
+      <p>
+        <strong>Estado:</strong>{" "}
+        {regla.estado}
+      </p>
+
+      <p>
         <strong>Categoría:</strong>{" "}
         {regla.categoria}
+      </p>
+
+      <p>
+        <strong>Sección:</strong>{" "}
+        {regla.seccion}
       </p>
 
       <p>
