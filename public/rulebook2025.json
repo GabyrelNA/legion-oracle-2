@@ -18,9 +18,60 @@
     "seccion": "Activation",
     "categoria": "reglas",
     "documento": "Rulebook 2025",
-    "respuesta": "Cada miniatura de una unidad debe estar a distancia 1 del líder de la unidad, tener línea de visión hacia él y respetar las restricciones de altura indicadas por las reglas de cohesión.",
+    "respuesta": "Cada miniatura de una unidad debe mantenerse en cohesión con el líder de la unidad siguiendo las restricciones indicadas por las reglas de cohesión.",
     "fuente": "Atomic Mass Games",
     "pagina": 23,
+    "tipo": "oficial",
+    "autoridad": 100,
+    "version": "2025",
+    "fecha": "2026-06-16"
+  },
+  {
+    "id": "RB25-057",
+    "estado": "vigente",
+    "palabras": [
+      "supresion",
+      "suppression",
+      "fichas supresion"
+    ],
+    "tags": [
+      "moral",
+      "coraje",
+      "panico",
+      "acciones"
+    ],
+    "titulo": "Suppression",
+    "seccion": "Morale",
+    "categoria": "reglas",
+    "documento": "Rulebook 2025",
+    "respuesta": "Las unidades acumulan fichas de supresión durante la batalla. Una unidad con fichas de supresión iguales o superiores a su valor de Coraje queda suprimida y realiza una acción menos durante su activación.",
+    "fuente": "Atomic Mass Games",
+    "pagina": 57,
+    "tipo": "oficial",
+    "autoridad": 100,
+    "version": "2025",
+    "fecha": "2026-06-16"
+  },
+  {
+    "id": "RB25-058",
+    "estado": "vigente",
+    "palabras": [
+      "panico",
+      "panic",
+      "acobardado"
+    ],
+    "tags": [
+      "moral",
+      "supresion",
+      "coraje"
+    ],
+    "titulo": "Panic",
+    "seccion": "Morale",
+    "categoria": "reglas",
+    "documento": "Rulebook 2025",
+    "respuesta": "Una unidad entra en pánico cuando sus fichas de supresión alcanzan al menos el doble de su valor de Coraje.",
+    "fuente": "Atomic Mass Games",
+    "pagina": 58,
     "tipo": "oficial",
     "autoridad": 100,
     "version": "2025",
