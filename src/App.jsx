@@ -50,7 +50,7 @@ export default function App() {
   ] = useState(true);
 
   useEffect(() => {
-    fetch("/reglas.json")
+    fetch("/rulebook2025.json")
       .then((response) => response.json())
       .then((data) => setReglas(data))
       .catch((error) => {
