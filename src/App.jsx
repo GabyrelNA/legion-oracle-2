@@ -338,41 +338,61 @@ export default function App() {
       )}
 
       {mejorResultado && (
-        <div
-          style={{
-            marginTop: "20px",
-            padding: "15px",
-            borderRadius: "10px",
-            backgroundColor: "#e8f4ff",
-            border:
-              "2px solid #0077cc"
-          }}
-        >
-          <h2>
-            MEJOR RESPUESTA DISPONIBLE
-          </h2>
+  <div
+    style={{
+      marginTop: "20px",
+      padding: "15px",
+      borderRadius: "10px",
+      backgroundColor: "#e8f4ff",
+      border:
+        "2px solid #0077cc"
+    }}
+  >
+    <h2>
+      MEJOR RESPUESTA DISPONIBLE
+    </h2>
 
-          <p>
-            <strong>
-              {obtenerEtiqueta(
-                mejorResultado.tipo
-              )}
-            </strong>
-          </p>
+    <p>
+      <strong>
+        {obtenerEtiqueta(
+          mejorResultado.tipo
+        )}
+      </strong>
+    </p>
 
-          <p>
-            Documento:{" "}
-            {mejorResultado.documento}
-          </p>
+    <h3>
+      {mejorResultado.titulo}
+    </h3>
 
-          <p>
-            Página:{" "}
-            {String(
-              mejorResultado.pagina
-            )}
-          </p>
-        </div>
+    <p>
+      {mejorResultado.respuesta}
+    </p>
+
+    <hr />
+
+    <p>
+      <strong>ID:</strong>{" "}
+      {mejorResultado.id}
+    </p>
+
+    <p>
+      <strong>Estado:</strong>{" "}
+      {mejorResultado.estado}
+    </p>
+
+    <p>
+      <strong>Documento:</strong>{" "}
+      {mejorResultado.documento}
+    </p>
+
+    <p>
+      <strong>Página:</strong>{" "}
+      {String(
+        mejorResultado.pagina
       )}
+    </p>
+  </div>
+)}
 
       {resultados.length === 0 ? (
         <div
