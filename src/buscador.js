@@ -1,7 +1,8 @@
 export function buscarReglas(reglas, pregunta) {
   const palabrasBusqueda = pregunta
     .toLowerCase()
-    .replace(/[¿?¡!.,;:()]/g, " ")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
     .split(/\s+/)
     .filter((palabra) => palabra.length > 2);
 
@@ -10,18 +11,69 @@ export function buscarReglas(reglas, pregunta) {
   reglas.forEach((regla) => {
     let puntuacion = 0;
 
-    const textoCompleto = `
-      ${regla.titulo || ""}
-      ${regla.respuesta || ""}
-      ${regla.documento || ""}
-      ${regla.seccion || ""}
-      ${(regla.palabras || []).join(" ")}
-      ${(regla.tags || []).join(" ")}
-    `.toLowerCase();
-
     palabrasBusqueda.forEach((palabra) => {
-      if (textoCompleto.includes(palabra)) {
-        puntuacion++;
+      if (
+        regla.palabras?.some((p) =>
+          p
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .includes(palabra)
+        )
+      ) {
+        puntuacion += 10;
+      }
+
+      if (
+        regla.tags?.some((t) =>
+          t
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .includes(palabra)
+        )
+      ) {
+        puntuacion += 8;
+      }
+
+      if (
+        regla.titulo
+          ?.toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(palabra)
+      ) {
+        puntuacion += 6;
+      }
+
+      if (
+        regla.seccion
+          ?.toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(palabra)
+      ) {
+        puntuacion += 5;
+      }
+
+      if (
+        regla.respuesta
+          ?.toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(palabra)
+      ) {
+        puntuacion += 3;
+      }
+
+      if (
+        regla.documento
+          ?.toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(palabra)
+      ) {
+        puntuacion += 1;
       }
     });
 
@@ -34,11 +86,11 @@ export function buscarReglas(reglas, pregunta) {
   });
 
   resultados.sort((a, b) => {
-    if (b.autoridad !== a.autoridad) {
-      return b.autoridad - a.autoridad;
+    if (b.puntuacion !== a.puntuacion) {
+      return b.puntuacion - a.puntuacion;
     }
 
-    return b.puntuacion - a.puntuacion;
+    return b.autoridad - a.autoridad;
   });
 
   return resultados;
