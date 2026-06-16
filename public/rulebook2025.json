@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "id": "RB25-023",
+    "estado": "vigente",
+    "palabras": [
+      "cohesion",
+      "unit cohesion",
+      "coherencia",
+      "distancia unidad"
+    ],
+    "tags": [
+      "cohesion",
+      "lider",
+      "miniaturas",
+      "distancia"
+    ],
+    "titulo": "Unit Cohesion",
+    "seccion": "Activation",
+    "categoria": "reglas",
+    "documento": "Rulebook 2025",
+    "respuesta": "Cada miniatura de una unidad debe estar a distancia 1 del líder de la unidad, tener línea de visión hacia él y respetar las restricciones de altura indicadas por las reglas de cohesión.",
+    "fuente": "Atomic Mass Games",
+    "pagina": 23,
+    "tipo": "oficial",
+    "autoridad": 100,
+    "version": "2025",
+    "fecha": "2026-06-16"
+  }
+]
