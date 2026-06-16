@@ -1,19 +1,35 @@
-[
-  {
-    "id": "PRUEBA-001",
-    "estado": "vigente",
-    "palabras": ["prueba"],
-    "tags": ["prueba"],
-    "titulo": "PRUEBA ÚNICA",
-    "seccion": "TEST",
-    "categoria": "reglas",
-    "documento": "ARCHIVO DE PRUEBA",
-    "respuesta": "Si ves esta respuesta, rulebook2025.json es el archivo que está usando la aplicación.",
-    "fuente": "TEST",
-    "pagina": 1,
-    "tipo": "oficial",
-    "autoridad": 100,
-    "version": "TEST",
-    "fecha": "2026-06-16"
-  }
-]
+{
+  "id": "RB25-023",
+  "estado": "vigente",
+  "palabras": [
+    "cohesion",
+    "unit cohesion",
+    "coherencia"
+  ],
+  "tags": [
+    "cohesion",
+    "lider",
+    "miniaturas"
+  ],
+  "titulo": "Unit Cohesion",
+  "seccion": "Activation",
+  "categoria": "reglas",
+  "documento": "Rulebook 2025",
+
+  "texto_oficial": "Texto literal o casi literal del reglamento.",
+
+  "respuesta": "Resumen fiel sin reinterpretar símbolos.",
+
+  "simbologia": [
+    "Range 1",
+    "Leader",
+    "Unit Cohesion"
+  ],
+
+  "fuente": "Atomic Mass Games",
+  "pagina": 23,
+  "tipo": "oficial",
+  "autoridad": 100,
+  "version": "2025",
+  "fecha": "2026-06-16"
+}
